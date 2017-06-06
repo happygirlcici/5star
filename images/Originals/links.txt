@@ -1,0 +1,16 @@
+carousel
+01-http://actioncoachireland.com/wp-content/uploads/2015/08/growth-1-copy.jpg
+02-http://s3-us-west-2.amazonaws.com/kyklo-website/wp-content/uploads/2016/08/19093902/smiling-customer.jpg
+03-http://anjosexpress.ch/wp-content/uploads/2015/06/164196128351045.jpg
+
+about
+http://blog.isc2.org/.a/6a00e54f109b67883401bb088f1b4c970d-pi
+
+services
+http://www.worldranksolutions.com/wp-content/themes/springfield/img/Page-Images/Web-Design-Services.png
+
+portfolio
+http://yesup.com/img/web-design.png
+
+contact
+http://www.uavrotorking.com/test3/wp-content/uploads/2016/01/030OnnVPTu6j2IZiBkbi_28_Contact-Us.png

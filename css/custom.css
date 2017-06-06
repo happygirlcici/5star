@@ -1,0 +1,767 @@
+/* Developed by :
+Index - Nedis Barreto
+About - Jun Yang
+Services - Sebastien Scullion
+Portfolio - Chen Chen
+Contact - Lorena Gamarra
+*/
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body, html { 
+	height: 100%;
+}
+
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {background-color: transparent;}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	min-width:400px;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1a1a1a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 30px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:not(:first-child):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+
+.sidebar-nav li:nth-child(2):before {
+    background-color: red;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: green;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: blue;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: gray;   
+}
+
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .5s ease-in;
+      -moz-transition:  width .5s ease-in;
+       -ms-transition:  width .5s ease-in;
+            transition: width .5s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 44px;
+}
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #222;
+    box-shadow: none;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+  position: fixed;
+  top: 35px;  
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #2B2D42;
+}
+.hamburger.is-closed .hamb-top { 
+  top: 5px; 
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;  
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: #EB1923;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px;  
+}
+.hamburger.is-open .hamb-top { 
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250,250,250,.8);
+    z-index: 100;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.bs-slider{
+    overflow: hidden;
+    max-height: 700px;
+    position: relative;
+    background: #000000;
+}
+.bs-slider:hover {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+.bs-slider:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.bs-slider .bs-slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+.bs-slider > .carousel-inner > .item > img,
+.bs-slider > .carousel-inner > .item > a > img {
+    margin: auto;
+    width: 100% !important;
+}
+
+/********************
+*****Slide effect
+**********************/
+
+.fade {
+    opacity: 1;
+}
+.fade .item {
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    left: 0 !important;
+    display: block !important;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+.fade .item:first-child {
+    top: auto;
+    position: relative;
+}
+.fade .item.active {
+    opacity: 1;
+    z-index: 2;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+
+
+
+
+
+
+/*---------- LEFT/RIGHT ROUND CONTROL ----------*/
+.control-round .carousel-control {
+    top: 47%;
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+    z-index: 100;
+    color: #ffffff;
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    overflow: hidden;
+    line-height: 43px;
+    text-shadow: none;
+    position: absolute;
+    font-weight: normal;
+    background: transparent;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+}
+.control-round:hover .carousel-control{
+    opacity: 1;
+}
+.control-round .carousel-control.left {
+    left: 1%;
+}
+.control-round .carousel-control.right {
+    right: 1%;
+}
+.control-round .carousel-control.left:hover,
+.control-round .carousel-control.right:hover{
+    color: #fdfdfd;
+    background: rgba(0, 0, 0, 0.5);
+    border: 0px transparent;
+}
+.control-round .carousel-control.left>span:nth-child(1){
+    left: 45%;
+}
+.control-round .carousel-control.right>span:nth-child(1){
+    right: 45%;
+}
+
+
+/*---------- SLIDE CAPTION ----------*/
+.slide_style_left {
+    text-align: left !important;
+}
+.slide_style_right {
+    text-align: right !important;
+}
+.slide_style_center {
+    text-align: center !important;
+}
+
+.slide-text {
+    left: 0;
+    top: 25%;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    padding: 10px 85px;
+    
+}
+
+.slide-text > h1 {
+    
+    padding: 0;
+    color: #ffffff;
+    font-size: 70px;
+    font-style: normal;
+    line-height: 84px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    display: inline-block;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+
+/*------------------------------------------------------*/
+/* RESPONSIVE
+/*------------------------------------------------------*/
+
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .slide-text h1 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+}
+
+@media  (max-width: 767px) {
+    .slide-text {
+        padding: 10px 50px;
+    }
+    .slide-text h1 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    .control-round .carousel-control{
+        display: none;
+    }
+}
+
+
+
+
+@media  (max-width: 480px) {
+    .slide-text {
+        padding: 10px 30px;
+    }
+    .slide-text h1 {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+    .indicators-line > .carousel-indicators{
+        display: none;
+    }
+	
+	.row img { 
+		max-width:40%;
+	}
+}
+
+/*-------------------- NEDIS ----------------------*/
+
+#logo {
+	position:relative;
+	left:50%;
+	margin: 10px 0 0 -125px;
+	
+}
+
+#header	{
+  z-index: 2;
+  display: inline-block;
+  height: 100px;
+  background: white;
+  border-bottom: 3px solid #8D99AE;
+  
+}
+
+main {
+	margin-top:50px;
+}
+
+.carousel-indicators {
+  z-index: 1;
+}
+
+
+#footer {
+  margin-bottom: 00px;
+  border-radius:0px;
+}
+
+#footer:last-child {
+ padding-right:5px;
+}
+
+.row img { 
+	margin-top:60px;
+	max-width:60%;
+}
+
+h3 {
+	font-family: 'Fjalla One', sans-serif;
+	color:#2B2D42;
+	text-transform: uppercase;
+}
+
+.row img:hover { transform: scale(1.1); }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 16px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #8D99AE;
+  -webkit-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: #2B2D42;
+  -webkit-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: #2B2D42;
+  -webkit-border-radius: 3px;
+}
+
+main .container {
+
+	padding-top:10px;
+        
+}
+
+.slide-text > h1 {
+	position:static;
+	margin:0;
+	padding:0;
+	font-size:1.3em;
+}
+
+#bootstrap-touch-slider {
+	padding:0;
+}
+
+
+/*   SEBASTIEN*/
+/* ************ */
+/*   SEBASTIEN*/
+.jumbotron{
+	background-image:url(../images/web_design_png.png);
+	background-repeat:no-repeat;
+	background-size:36%;
+}
+#sidebar-wrappe {
+	background-color:white;
+}
+
+#serviceimg img{
+	
+	margin:0;
+	margin-left:20%;
+	
+	
+}
+#serviceimg{
+	
+	padding-bottom:199px;
+	
+}
+
+.jumbotron h1{
+	font-family: 'Fjalla One', sans-serif;
+	color:#2B2D42;
+}
+
+
+
+/*ADDING CHEN's CSS styles*/
+/*End of CSS for search bar2*/
+
+/*Adding drop button CSS style*/
+  
+  .toggler { width: 480px; height: 180px; blackground-color:#D0CDCD;}
+  #button { padding: 0.5em 1em; text-decoration: none; }
+  #effect { width: 470px; height: 150px; padding: 0.1px; margin:0.1px; position: relative;text-align: center;  }
+  #effect h3 { margin: 0.1em; padding: 0.4em; text-align: center; background-color:#FFF;}
+  #effect h4 { margin: 0.1em; padding: 0.2em; text-align: left; }
+  
+/*End drop button CSS style*/
+
+/*For btn-css*/
+
+.btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+
+.btn-success {
+  color: #fff;
+  font-size:14px;
+  font-family:"Arial Black", Gadget, sans-serif;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-success:focus,
+.btn-success.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.btn-primary {
+  color: #fff;
+  font-size:16px;
+  font-family:"Arial Black", Gadget, sans-serif;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+
+
+.btn-chen_menu {
+  color: #2A5FAA;
+  font-size:16px;
+  font-family: 'Francois One', sans-serif;
+  background-color: #DAD8D8;  /*chen's menu button's color is grey*/
+  border-color: #A6CAF0;
+}
+.btn-chen_menu:focus,
+.btn-chen_menu.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.btn-chen_menu:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.p_font_white
+{
+	color:#FFF;
+	}
+	
+.p_font_navy
+{
+	color:#031E3F;
+	}
+/*end of btn-css*/
+
+/*ADD drop button h5 change color style*/
+
+.h5_over{background-color:#B3B6F0;}
+.h5_out{background-color:#FFF;}
+
+/*END OF drop button h5 change color style */
+
+
+/*Search bar2 style ADDING by CHEN*/
+
+
+#searchBar2 {
+	
+	
+	float:right;} 
+	
+/*Fixed problem*/
+
+#bg_bar {
+	background-image:url("images/bg001.jpg");
+	background-repeat:repeat-y;
+	background-position:center;
+	width:100%;
+	}
+
+.num_big {
+	font-size:22px;}
+
+.zz_index{
+	z-index:1;
+}
+
+
+/*END CHEN's CSS Style*/
+
+/* Jun's CSS */
+#about_image {
+	magin: 0 auto;
+}
+.about_font {
+	color: deepskyblue;
+}
+.about_title {
+	color: deepskyblue;
+	border-bottom: 1px solid #fff;
+}	
+/* End Jun"s Style */
+
+/* Lorena's CSS */
+#page-header-Lorena{
+    background-image:url("images/contactus.jpg");
+    background-repeat:no-repeat;
+    width:100%;
+}
+
+/*End Lorena's CSS*/

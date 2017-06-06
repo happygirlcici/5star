@@ -1,0 +1,297 @@
+ .navbar-text > a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ body {
+     padding-top:70px;
+     padding-bottom:100px;
+ }
+
+ p {
+     font-family: 'Open Sans', sans-serif;
+ }
+
+ h1, h2, h3, h5, h6 {
+     font-family: 'Oswald', sans-serif;
+ }
+ 
+ h4 {
+	font-family: 'Open Sans', sans-serif;}
+
+ /* 11 Bootstrap CSS Modifications to Navbar and Buttons */
+ .navbar-default {
+     background-color:#2C3E50; /* navy blue */
+     border-color:#FFF;
+     color:#FFF;
+ }
+
+ .navbar-default .navbar-brand {
+     color:#FFF;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color:#18BC9C; /* Turquoise */
+     background-color:transparent;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color:#FFF;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color:#FFF;
+     background-color:#1A242F; /* Navy Blue*/
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color:#18BC9C; /* Turquoise */
+     background-color:transparent;
+ }
+
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:hover,
+  .navbar-default .navbar-nav > .open > a:focus {
+     color:#FFF;
+     background-color:#1A242F; /* Navy Blue*/
+  }
+
+  .btn-primary {
+      color:#FFF;
+      background-color:#2C3E50; /* navy blue */
+      border-color:#2C3E50;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active,
+  .open .dropdown-toggle.btn-primary {
+      color:#FFF;
+      background-color:#1E2A36;
+      border-color: #161F29;
+  }
+
+   .btn-success {
+      color:#FFF;
+      background-color:#18BC9C;
+      border-color:#18BC9C;
+  }
+
+  .btn-success:hover,
+  .btn-success:focus,
+  .btn-success:active,
+  .open .dropdown-toggle.btn-success {
+      color:#FFF;
+      background-color:#13987E;
+      border-color: #13987E;
+  }
+
+    .btn-default {
+      color:#FFF;
+      background-color:#95A5A6;
+      border-color:#95A5A6;
+  }
+
+  .btn-default:hover,
+  .btn-default:focus,
+  .btn-default:active,
+  .open .dropdown-toggle.btn-default {
+      color:#FFF;
+      background-color:#7F9293;
+      border-color: #74898A;
+  }
+
+  /* 12 Bootstrap CSS Transform and Transition Effects */
+  
+  .thumbnail img:hover {
+      transform:scale(1.1);
+  }
+
+  .thumbnail img {
+      transition: all 0.3s ease 0s;
+      width:100%;
+  }
+
+  .thumbnail {
+      overflow:hidden;
+  }
+
+.bg-grey {
+    background-color: #f9f9f9;
+}
+
+.carousel {
+    padding-bottom:20px;
+}
+
+/*Adding yahoo CSS style for next pages by Chen in portifilio pages*/
+
+
+DIV.yahoo {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+DIV.yahoo A {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #fff 1px solid; 
+	COLOR: #000099; PADDING-TOP: 2px; BORDER-BOTTOM: #fff 1px solid; TEXT-DECORATION: underline
+}
+DIV.yahoo A:hover {
+	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; 
+	COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+}
+DIV.yahoo A:active {
+	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; 
+	COLOR: #f00; BORDER-BOTTOM: #000099 1px solid
+}
+DIV.yahoo SPAN.current {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #fff 1px solid; 
+	COLOR: #000; PADDING-TOP: 2px; BORDER-BOTTOM: #fff 1px solid; BACKGROUND-COLOR: #fff
+}
+DIV.yahoo SPAN.disabled {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #eee 1px solid; 
+	COLOR: #ddd; PADDING-TOP: 2px; BORDER-BOTTOM: #eee 1px solid
+}
+
+/*CSS for search bar2*/
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 25px;
+}
+
+/*End of CSS for search bar2*/
+
+/*Adding drop button CSS style*/
+  
+  .toggler { width: 480px; height: 180px; blackground-color:#D0CDCD;}
+  #button { padding: 0.5em 1em; text-decoration: none; }
+  #effect { width: 470px; height: 150px; padding: 0.1px; margin:0.1px; position: relative;text-align: center;  }
+  #effect h3 { margin: 0.1em; padding: 0.4em; text-align: center; background-color:#FFF;}
+  #effect h4 { margin: 0.1em; padding: 0.2em; text-align: left; }
+  
+/*End drop button CSS style*/
+
+/*For btn-css*/
+
+.btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+
+.btn-success {
+  color: #fff;
+  font-size:14px;
+  font-family:"Arial Black", Gadget, sans-serif;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-success:focus,
+.btn-success.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.btn-primary {
+  color: #fff;
+  font-size:16px;
+  font-family:"Arial Black", Gadget, sans-serif;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+
+
+.btn-chen_menu {
+  color: #2A5FAA;
+  font-size:16px;
+  font-family: 'Francois One', sans-serif;
+  background-color: #DAD8D8;  /*chen's menu button's color is grey*/
+  border-color: #A6CAF0;
+}
+.btn-chen_menu:focus,
+.btn-chen_menu.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.btn-chen_menu:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.p_font_white
+{
+	color:#FFF;
+	}
+	
+.p_font_navy
+{
+	color:#031E3F;
+	}
+/*end of btn-css*/
+
+/*ADD drop button h5 change color style*/
+
+.h5_over{background-color:#B3B6F0;}
+.h5_out{background-color:#FFF;}
+
+/*END OF drop button h5 change color style */
+
+
+/*Search bar2 style ADDING by CHEN*/
+
+
+#searchBar2 {
+	
+	
+	float:right;} 
